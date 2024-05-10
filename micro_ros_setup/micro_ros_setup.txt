@@ -18,4 +18,12 @@ $ colcon build
 $ source install/local_setup.bash
 $ ros2 run micro_ros_setup create_agent_ws.sh
 $ ros2 run micro_ros_setup build_agent.sh
+ここで下の画像のような警告が出た場合はここからZIPファイルをダウンロードして解凍する。
+フォルダ名をtinyxml2に変更してホーム下に配置して，colcon buildを行う。
+Agentが動作するか確認してみる。
+
+
+$ source install/local_setup.sh
+$ ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888
+
 
