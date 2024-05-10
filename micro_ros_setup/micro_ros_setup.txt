@@ -5,4 +5,17 @@ micro_ROS
 https://github.com/micro-ROS/micro_ros_setup/tree/humble
 ESP32マイコンとROS2で無線通信（micro-ROS）
 https://qiita.com/hirekatsu0523/items/434bc03ab40ae4b05a05
+-----------------------------------------------------------
+次にmicro-ROS-Agentを導入する。これは簡単に言えばマイコンからのメッセージをROS2で認識可能にする役割を持っている。
+以下のコマンドを順に実行する。
+
+
+$ cd ~/ros2_ws (ROS2のワークスペースに移動する)
+$ source /opt/ros/humble/setup.bash
+$ git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+$ rosdep update && rosdep install --from-paths src --ignore-src -y
+$ colcon build
+$ source install/local_setup.bash
+$ ros2 run micro_ros_setup create_agent_ws.sh
+$ ros2 run micro_ros_setup build_agent.sh
 
